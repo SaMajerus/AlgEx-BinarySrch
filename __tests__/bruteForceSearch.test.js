@@ -13,7 +13,7 @@ describe('bruteForceSearch', () => {
     // expect().toEqual();
   });
 
-  // test('should search for a value that is not stored in the array, and return -1', () => {
-  //   expect(bruteForceSearch(999, sortedArray)).toEqual(-1);
-  // });
+  test('should search for a value that is not stored in the array, and return -1', () => {
+    expect(bruteForceSearch(999, sortedArray)).toEqual(-1);
+  });
 });
