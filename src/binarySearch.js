@@ -24,23 +24,22 @@ function binarySearch(numberWeWantToFind, arrayWeAreSearching) {
 
 
 function binarySearch(num, array) {
-  // let lowerIndex = 0;  //First index of 'array'. 
-  // let upperIndex = array.length - 1;  //Total number of elements in 'array'.
+  let lowerIndex = 0;  //First index of 'array'. 
+  let upperIndex = array.length - 1;  //Total number of elements in 'array'.
 
-  // // **'lowerIndex > upperIndex' IFF all indices of 'array' have been searched and the value is not included. 
-  // while (lowerIndex <= upperIndex) { 
-  //   let middleIndex = Math.floor((lowerIndex + upperIndex)/2);  //'Math.floor' rounds down to the nearest whole number. 
+  // **'lowerIndex > upperIndex' IFF all indices of 'array' have been searched and the value is not included. 
+  while (lowerIndex <= upperIndex) { 
+    let middleIndex = Math.floor((lowerIndex + upperIndex)/2);  //'Math.floor' rounds down to the nearest whole number. 
     
-  //   if (array[middleIndex] === num) {  //'num' is found! Thus, 'middleIndex' can be returned. 
-  //     return middleIndex;
-  //   } else if (array[middleIndex] < num) {  //'num' > 'array[middleIndex]'. Thus, all indices <= 'middleIndex' can be eliminated from consideration. 
-  //     lowerIndex = middleIndex + 1;
-  //   } else if (array[middleIndex] > num) {  //'num' < 'array[middleIndex]'. Thus, all indices >= 'middleIndex' can be eliminated from consideration. 
-  //     upperIndex = middleIndex - 1;
-  //   }
-  // }
-  // // Note that we don't use an else condition just in case some other yucky thing we can't predict happens. Also if our loop never returns anything, it will end and return -1.
-  // return -1;
+    if (array[middleIndex] === num) {  //'num' is found! Thus, 'middleIndex' can be returned. 
+      return middleIndex;
+    } else if (array[middleIndex] < num) {  //'num' > 'array[middleIndex]'. Thus, all indices <= 'middleIndex' can be eliminated from consideration. 
+      lowerIndex = middleIndex + 1;
+    } else if (array[middleIndex] > num) {  //'num' < 'array[middleIndex]'. Thus, all indices >= 'middleIndex' can be eliminated from consideration. 
+      upperIndex = middleIndex - 1;
+    }
+  } //Else: If the loop ends without returning anything, return -1.
+  return -1;
 }
 
 export default binarySearch;
